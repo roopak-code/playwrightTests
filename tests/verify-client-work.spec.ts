@@ -6,7 +6,7 @@ test('Verify Client Work page visibility', async ({ page }) => {
   });
 
   await test.step('Open Services menu from the header', async () => {
-    await page.getByRole('link', { name: 'Services' }).click();
+    await page.getByRole('button', { name: 'Services' }).click();
   });
 
   await test.step('Click Explore Our Client Work link', async () => {
@@ -14,6 +14,6 @@ test('Verify Client Work page visibility', async ({ page }) => {
   });
 
   await test.step('Verify Client Work text is visible', async () => {
-    await expect(page.getByText('Client Work', { exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Client Work' })).toBeVisible();
   });
 });
